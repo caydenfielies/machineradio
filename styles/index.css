@@ -1,0 +1,110 @@
+::-moz-selection {
+    color: rgb(238, 237, 237);
+    background: rgb(220, 20, 60);
+  }
+  
+  ::selection {
+    color: rgb(238, 237, 237);
+    background: rgb(220, 20, 60);
+  }
+
+@font-face {
+    font-family: 'PP Neue Montreal';
+    src: url(/assets/PP\ Neue\ Montreal//OTF/PPNeueMontreal-Medium.otf);
+}
+
+@font-face {
+    font-family: 'OT Brut';
+    src: url(/assets/OT\ Brut/OTF/OTBrut-Regular.otf);
+}
+
+body {
+    background-color: rgb(238, 237, 237);
+    margin: 0px 30px;
+    color: rgb(15, 11, 252);
+    font-family: PP Neue Montreal;
+}
+
+.time {
+    text-align: center;
+}
+
+.hero {
+    margin-top: 20px;
+    width: 100%;
+    height: 600px;
+    background-color: rgb(15, 11, 252);
+    border-radius: 15px;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.heading-container {
+    margin-top: 40px;
+}
+
+.heading-eng, .heading-jp{
+    font-family: OT Brut;
+    font-size: 60px;
+    text-align: center;
+    margin: 0px;
+}
+
+.heading-eng {
+    margin-bottom: 25px;
+}
+
+.heading-jp {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-grid {
+    display: grid;
+    width: 1000px;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+}
+
+.nav-button {
+    cursor: pointer;
+    display: flex;
+    border: 1px solid;
+    border-radius: 25px;
+    font-size: 16px;
+    padding: 5px 10px;
+    align-items: center;
+    justify-content: space-between;
+    transition: .25s;
+    margin-bottom: 80px;
+}
+
+.nav-button:hover {
+    background-color: rgb(252, 126, 21);
+    color: rgb(238, 237, 237);
+}
+
+.footer {
+    background-color: rgb(238, 237, 237);
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    border: 1px solid;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    font-size: 14px;
+    text-align: center;
+    padding: 5px;
+}
