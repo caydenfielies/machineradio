@@ -35,7 +35,14 @@
 
 body {
     height: 100vh;
-    background-color: rgb(238, 237, 237);
+    /* background-color: rgb(238, 237, 237); */
+    background: linear-gradient(
+        to bottom,
+        #ff8181,
+        #fba98a,
+        #e3a8d6,
+        #6969b6
+    );
     margin: 0px;
     padding: 0px 30px;
     display: flex;
@@ -122,9 +129,6 @@ body a {
     font-size: 16px;
     padding: 5px 10px;
     transition: .25s;
-}
-
-.home-nav-button a {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -174,9 +178,6 @@ body a {
     font-size: 16px;
     padding: 5px 10px;
     transition: .25s;
-}
-
-.nav-button a {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -202,7 +203,7 @@ body a {
     font-size: 3.5vw;
     font-family: PP Supply;
     margin-top: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
 }
 
 .bio-flex {
@@ -258,6 +259,7 @@ body a {
     color: rgb(15, 11, 252);
     font-family: PP Neue Montreal;
     transition: .25s;
+    background-color: transparent;
 }
 
 .scroll-button:hover {
@@ -336,6 +338,12 @@ body a {
     display: none;
 }
 
+.socials-container {
+    display: flex;
+    align-items: center;
+    column-gap: 25px;
+}
+
 .socials-heading-jp {
     font-size: 25px;
     margin-bottom: 5px;
@@ -358,14 +366,19 @@ body a {
     cursor: pointer;
     width: 100%;
     border: 1px solid rgb(15, 11, 252);
-    padding: 8px 10px;
     border-radius: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     color: rgb(15, 11, 252);
     font-family: PP Neue Montreal;
     transition: .25s;
+    background-color: transparent;
+}
+
+.socials-button a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    padding: 8px 15px;
 }
 
 .socials-button:hover {
@@ -380,4 +393,17 @@ body a {
 .insta-img {
     width: 24px;
     margin: 0px;
+}
+
+.tree-img {
+    width: 240px;
+    object-fit: contain;
+}
+
+.lee {
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80px;
 }
