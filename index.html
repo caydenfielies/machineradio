@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>machineradio</title>
+
+    <link rel="stylesheet" href="styles/index.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&icon_names=arrow_outward" />
+</head>
+<body>
+    <div class="navigation nav-off">
+        <div class="nav-grid">
+            <div onclick="switchContent('home')" class="nav-button">
+                    <p>machineradio</p>
+                    <span class="material-symbols-outlined">arrow_outward</span>
+            </div>
+            <div onclick="switchContent('bio')" class="nav-button">
+                    <p>Biography</p>
+                    <span class="material-symbols-outlined">arrow_outward</span>
+            </div>
+            <div onclick="switchContent('proj')" class="nav-button">
+                    <p>Projects</p>
+                    <span class="material-symbols-outlined">arrow_outward</span>
+            </div>
+            <div onclick="switchContent('socials')" class="nav-button">
+                    <p>Socials</p>
+                    <span class="material-symbols-outlined">arrow_outward</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <section id="hero-section">
+            <div class="hero">
+                <img class="hero-img" src="/assets/hero4.png" alt="flowers">
+            </div>
+        </section>
+
+        <section id="header-section">
+            <div class="heading-container">
+                <p class="time"></p>
+                <p class="heading-jp">マシンラジオ</p>
+                <h1 class="heading-eng">machineradio</h1>
+            </div>
+            
+            <div class="home-navigation">
+                <div class="home-nav-grid">
+                    <div onclick="switchContent('bio')" class="home-nav-button">
+                        <p>biography</p>
+                        <span class="material-symbols-outlined">arrow_outward</span>
+                    </div>
+                    <div onclick="switchContent('proj')" class="home-nav-button">
+                        <p>projects</p>
+                        <span class="material-symbols-outlined">arrow_outward</span>
+                    </div>
+                    <div onclick="switchContent('socials')" class="home-nav-button">
+                        <p>socials</p>
+                        <span class="material-symbols-outlined">arrow_outward</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section id="biography" class="bio-off">
+        <div class="bio-flex">
+            <div class="bio-container">
+                <p class="bio-heading-jp">バイオグラフィー</p>
+                <p class="bio-heading">Biography</p>
+
+                <p class="bio-para"><span class="bio-para-emph">Lee</span>, born on March 23, 2005, is a South African music producer and composer with a growing presence in the music scene. He has had the privilege of working with talented artists like <span class="bio-para-emph">Lancey Foux</span>, <span class="bio-para-emph">Fimi Guerrero</span>, <span class="bio-para-emph">Len Lucci</span>, and <span class="bio-para-emph">Destroy Lonely</span>. Keeping a low profile, <span class="bio-para-emph">Lee</span> focuses on creating music that resonates, often teaming up with close friends in a group he describes as “<span class="bio-para-emph">Wave To Earth</span>” — a family of friends rather than a formal collective. With a commitment to growth and collaboration, <span class="bio-para-emph">Lee</span> remains dedicated to sharing meaningful music with the world.</p>
+            </div>
+            <img class="flower-img" alt="flower" src="assets/flower.png">
+        </div>
+    </section>
+
+    <section id="projects" class="proj-off">
+        <div class="proj-top-container">
+            <div class="proj-headings">
+                <p class="bio-heading-jp">アートセレクション</p>
+                <p class="bio-heading">Selected Work</p>
+            </div>
+            <div class="proj-buttons">
+                <button id="prev-button" class="scroll-button">
+                    <p>Back</p>
+                    <img class="scroll-img" src="assets/arrow_back.png">
+                </button>
+                <button id="next-button" class="scroll-button">
+                    <p>Forward</p>
+                    <img class="scroll-img" src="assets/arrow_forward.png">
+                </button>
+            </div>
+        </div>
+
+        <div class="proj-carousel-container">
+            <div class="proj-carousel">
+                <div class="tile">
+                    <a class="song-link" href="https://open.spotify.com/track/1fRUSLsMxYyTSMejr7iNm2?si=31c3d8689c62477c">
+                        <img class="tile-img" src="assets/live_forever.jpg">
+                        <div class="song-info">
+                            <p class="song-title">Live Forever</p>
+                            <p class="artist">Lancey Foux</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="tile">
+                    <a class="song-link" href="https://open.spotify.com/track/31N2MlwzZHXjJalEEbh5LM?si=6da49442fe7d4ca5">
+                        <img class="tile-img" src="assets/on_ur_mind.jpg">
+                        <div class="song-info">
+                            <p class="song-title">On Ur Mind</p>
+                            <p class="artist">Lancey Foux</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="tile">
+                    <a class="song-link" href="https://open.spotify.com/track/70nOncasr0R9YcpFsQ2Hjs?si=994d22aba6724ddc">
+                        <img class="tile-img" src="assets/conglomerate.jpg">
+                        <div class="song-info">
+                            <p class="song-title">Spanish Guitar</p>
+                            <p class="artist">Lancey Foux</p>
+                        </div>
+                    </a>
+                </div>
+        </div>
+    </section>
+
+    <section id="socials" class="socials-off">
+        <div class="socials-headings">
+            <p class="socials-heading-jp">ソーシャルメディア</p>
+            <p class="socials-heading">Social Media</p>
+        </div>
+
+        <div class="socials-grid">
+            <button class="socials-button">
+                <p>Instagram</p>
+                <img class="insta-img" src="https://static.xx.fbcdn.net/rsrc.php/v4/yx/r/tBxa1IFcTQH.png">
+            </button>
+            <button class="socials-button">
+                <p>SoundCloud</p>
+                <img class="insta-img" src="https://help.soundcloud.com/hc/theming_assets/01J16T38WYGCHVJ275JSHWA3SG">
+            </button>
+        </div>
+    </section>
+
+    <section id="footer">
+    </section>
+
+    <script src="scripts/index.js"></script>
+</body>
+</html>

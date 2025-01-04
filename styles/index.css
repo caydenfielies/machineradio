@@ -1,0 +1,383 @@
+::-moz-selection {
+    color: rgb(238, 237, 237);
+    background: rgb(220, 20, 60);
+  }
+  
+  ::selection {
+    color: rgb(238, 237, 237);
+    background: rgb(220, 20, 60);
+  }
+
+@font-face {
+    font-family: 'PP Neue Montreal';
+    src: url(/assets/PP\ Neue\ Montreal//OTF/PPNeueMontreal-Medium.otf);
+}
+
+@font-face {
+    font-family: 'OT Brut';
+    src: url(/assets/OT\ Brut/OTF/OTBrut-Regular.otf);
+}
+
+@font-face {
+    font-family: 'OT Brut Italic';
+    src: url(/assets/OT\ Brut/OTF/OTBrut-Italic.otf);
+}
+
+@font-face {
+    font-family: 'PP Supply';
+    src: url(/assets/PP\ Supply/OTF/PPSupplySans-Regular.otf);
+}
+
+@font-face {
+    font-family: 'PP Valve';
+    src: url(/assets/PP\ Valve/otf/PPValve-PlainMedium.otf);
+}
+
+body {
+    height: 100vh;
+    background-color: rgb(238, 237, 237);
+    margin: 0px;
+    padding: 0px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(15, 11, 252);
+    font-family: PP Neue Montreal;
+}
+
+body a {
+    color: rgb(15, 11, 252);
+}
+
+.time {
+    text-align: center;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 60px;
+}
+
+.main-off {
+    display: none;
+}
+
+#hero-section {
+    width: 60%;
+}
+
+.hero {
+    width: 100%;
+    height: 600px;
+    background-color: rgb(15, 11, 252);
+    border-radius: 15px;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+    border-radius: 15px;
+}
+
+.heading-container {
+    margin-top: 40px;
+}
+
+.heading-eng, .heading-jp{
+    font-family: OT Brut;
+    font-size: 60px;
+    text-align: center;
+    margin: 0px;
+}
+
+.heading-eng {
+    margin-bottom: 25px;
+}
+
+.heading-jp {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.home-navigation {
+    display: flex;
+    justify-content: center;
+}
+
+.home-nav-grid {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    row-gap: 10px;
+}
+
+.home-nav-button {
+    cursor: pointer;
+    border: 1px solid;
+    border-radius: 25px;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: .25s;
+}
+
+.home-nav-button a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
+.home-nav-button:hover {
+    background-color: rgb(252, 126, 21);
+    border: 1px solid rgb(252, 126, 21);
+}
+
+#footer {
+    background-color: rgb(238, 237, 237);
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    border: 1px solid;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    font-size: 14px;
+    text-align: center;
+    padding: 5px;
+}
+
+.navigation {
+    position: fixed;
+    top: 10px;
+}
+
+.nav-off {
+    display: none;
+}
+
+.nav-grid {
+    width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 10px;
+}
+
+.nav-button {
+    cursor: pointer;
+    border: 1px solid;
+    border-radius: 25px;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: .25s;
+}
+
+.nav-button a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
+.nav-button:hover {
+    background-color: rgb(252, 126, 21);
+    border: 1px solid rgb(252, 126, 21);
+}
+
+.bio-off {
+    display: none;
+}
+
+.bio-heading-jp {
+    font-size: 25px;
+    margin-bottom: 5px;
+    margin-top: 0px;
+}
+
+.bio-heading {
+    font-size: 3.5vw;
+    font-family: PP Supply;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.bio-flex {
+    margin-top: 30px;
+    display: flex;
+    align-items: end;
+    column-gap: 40px;
+}
+
+.bio-para {
+    font-size: 2.2vw;
+    margin: 0px;
+    text-wrap: balance;
+}
+
+.bio-para-emph {
+    font-size: 2.5vw;
+    font-family: OT Brut Italic;
+}
+
+.flower-img {
+    object-fit: contain;
+    width: 220px;
+}
+
+.proj-off {
+    display: none;
+}
+
+.proj-top-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.proj-buttons {
+    display: flex;
+    column-gap: 10px;
+    width: 250px;
+}
+
+.scroll-button {
+    cursor: pointer;
+    width: 100%;
+    border: 1px solid rgb(15, 11, 252);
+    padding: 8px 10px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(15, 11, 252);
+    font-family: PP Neue Montreal;
+    transition: .25s;
+}
+
+.scroll-button:hover {
+    background-color: rgb(252, 126, 21);
+    border: 1px solid rgb(252, 126, 21);
+}
+
+.scroll-button:active {
+    background-color: rgb(204, 92, 0);
+}
+
+.scroll-img {
+    width: 24px;
+    margin: 0px;
+}
+
+.proj-carousel-container {
+    width: 1400px;
+}
+
+.proj-carousel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 15px;
+    width: 100%;
+    overflow: auto;
+    overflow-y: hidden;
+}
+  
+.proj-carousel {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.proj-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.tile {
+    cursor: pointer;
+    border: 1px solid rgb(15, 11, 252);
+    border-radius: 15px;
+    padding: 10px 10px;
+    transition: .25s;
+}
+
+.tile a {
+    text-decoration: none;
+}
+
+.tile:hover {
+    background-color: rgb(15, 11, 252);
+    scale: 99%;
+}
+
+.tile:hover a {
+    color: rgb(238, 237, 237);
+}
+
+.tile-img {
+    width: 380px;
+    border-radius: 10px;
+}
+
+.song-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.song-title, .artist {
+    font-family: PP Valve;
+}
+
+.socials-off {
+    display: none;
+}
+
+.socials-heading-jp {
+    font-size: 25px;
+    margin-bottom: 5px;
+    margin-top: 0px;
+}
+
+.socials-heading {
+    font-size: 3.5vw;
+    font-family: PP Supply;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.socials-grid {
+    display: grid;
+    row-gap: 10px;
+}
+
+.socials-button {
+    cursor: pointer;
+    width: 100%;
+    border: 1px solid rgb(15, 11, 252);
+    padding: 8px 10px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(15, 11, 252);
+    font-family: PP Neue Montreal;
+    transition: .25s;
+}
+
+.socials-button:hover {
+    background-color: rgb(252, 126, 21);
+    border: 1px solid rgb(252, 126, 21);
+}
+
+.socials-button:active {
+    background-color: rgb(204, 92, 0);
+}
+
+.insta-img {
+    width: 24px;
+    margin: 0px;
+}
