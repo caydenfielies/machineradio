@@ -317,6 +317,10 @@ body a {
     scale: 99%;
 }
 
+.tile:hover a {
+    color: rgb(238, 237, 237);
+}
+
 .tile-img {
     width: 380px;
     border-radius: 10px;
