@@ -312,7 +312,11 @@ body a {
 }
 
 .tile:hover {
-    background-color: white;
+    background: linear-gradient(
+    to bottom,
+    #d75a5a,
+    #b060a5
+    );
     scale: 99%;
 }
 
