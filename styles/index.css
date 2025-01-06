@@ -38,10 +38,10 @@ body {
     /* background-color: rgb(238, 237, 237); */
     background: linear-gradient(
         to bottom,
-        #ff8181,
-        #fba98a,
-        #e3a8d6,
-        #6969b6
+        #ff5e5e,
+        #f7855d,
+        #d15ce0,
+        #4a4aa5
     );
     margin: 0px;
     padding: 0px 30px;
