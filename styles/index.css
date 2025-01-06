@@ -309,15 +309,12 @@ body a {
 
 .tile a {
     text-decoration: none;
+    color: #855fe3;
 }
 
 .tile:hover {
     background-color: transparent;
     scale: 99%;
-}
-
-.tile:hover a {
-    color: rgb(230, 230, 250);
 }
 
 .tile-img {
