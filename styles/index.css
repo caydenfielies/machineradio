@@ -336,7 +336,8 @@ body a {
 }
 
 .artist {
-  text-align: right;
+    height: 45px;
+    text-align: right;
 }
 
 .socials-off {
