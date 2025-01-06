@@ -334,6 +334,10 @@ body a {
     font-family: PP Valve;
 }
 
+.artist {
+  text-align: right;
+}
+
 .socials-off {
     display: none;
 }
