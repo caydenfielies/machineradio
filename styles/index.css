@@ -378,7 +378,7 @@ body a {
 .socials-button {
     cursor: pointer;
     width: 100%;
-    border: 1px solid rgb(15, 11, 252);
+    border: 1px solid transparent;
     border-radius: 25px;
     color: rgb(15, 11, 252);
     font-family: PP Neue Montreal;
@@ -395,7 +395,6 @@ body a {
 }
 
 .socials-button:hover {
-    background-color: rgb(248, 200, 220);
     border: 1px solid rgb(248, 200, 220);
 }
 
