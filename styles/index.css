@@ -106,7 +106,7 @@ body a {
 }
 
 .heading-jp {
-    text-shadow: 2px 2px 5px rgba(112, 27, 168, 0.721) ;
+    text-shadow: 2px 2px 5px rgba(112, 27, 168, 0.721);
     color: white;
     font-weight: bold;
     font-size: 25px;
@@ -175,7 +175,7 @@ body a {
 
 .nav-button {
     cursor: pointer;
-    border: 1px solid;
+    border: 1px solid transparent;
     border-radius: 25px;
     font-size: 16px;
     padding: 5px 10px;
@@ -187,7 +187,6 @@ body a {
 }
 
 .nav-button:hover {
-    background-color: rgb(248, 200, 220);
     border: 1px solid rgb(248, 200, 220);
 }
 
@@ -196,6 +195,8 @@ body a {
 }
 
 .bio-heading-jp {
+    text-shadow: 2px 2px 5px rgba(112, 27, 168, 0.721);
+    color: white;
     font-size: 25px;
     margin-bottom: 5px;
     margin-top: 0px;
@@ -353,6 +354,8 @@ body a {
 }
 
 .socials-heading-jp {
+    text-shadow: 2px 2px 5px rgba(112, 27, 168, 0.721);
+    color: white;
     font-size: 25px;
     margin-bottom: 5px;
     margin-top: 0px;
