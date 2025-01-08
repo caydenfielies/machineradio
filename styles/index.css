@@ -316,7 +316,8 @@ body a {
 }
 
 .tile:hover {
-    background-color: rgb(238, 237, 237);
+    background-color: transparent;
+    border-color: rgb(238, 237, 237);
     scale: 99%;
 }
 
