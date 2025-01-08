@@ -379,7 +379,7 @@ body a {
     cursor: pointer;
     width: 100%;
     border: 1px solid rgb(15, 11, 252);
-    border-radius: 50px;
+    border-radius: 25px;
     color: rgb(15, 11, 252);
     font-family: PP Neue Montreal;
     transition: .25s;
