@@ -262,7 +262,7 @@ body a {
     justify-content: space-between;
     color: rgb(15, 11, 252);
     font-family: PP Neue Montreal;
-    transition: .25s;
+    transition: .125s;
     background-color: transparent;
 }
 
@@ -316,7 +316,7 @@ body a {
 }
 
 .tile:hover {
-    background-color: transparent;
+    background-color: rgb(238, 237, 237);
     scale: 99%;
 }
 
