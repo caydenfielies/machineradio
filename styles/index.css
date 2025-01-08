@@ -106,7 +106,7 @@ body a {
 }
 
 .heading-jp {
-    text-shadow: 2px 2px 5px rgba(112, 27, 168, 0.721);
+    text-shadow: 2px 2px 5px rgb(112, 27, 168);
     color: white;
     font-weight: bold;
     font-size: 25px;
