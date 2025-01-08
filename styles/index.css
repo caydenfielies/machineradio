@@ -102,7 +102,6 @@ body a {
 }
 
 .heading-eng {
-    font-family: JetBrains Mono;
     margin-bottom: 25px;
 }
 
@@ -175,6 +174,7 @@ body a {
 }
 
 .nav-button {
+    font-family: JetBrains Mono;
     cursor: pointer;
     border: 1px solid transparent;
     border-radius: 25px;
