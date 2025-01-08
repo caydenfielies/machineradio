@@ -197,6 +197,7 @@ body a {
 .bio-heading-jp {
     text-shadow: 2px 2px 5px rgba(112, 27, 168, 0.721);
     color: white;
+    font-weight: bold;
     font-size: 25px;
     margin-bottom: 5px;
     margin-top: 0px;
@@ -356,6 +357,7 @@ body a {
 .socials-heading-jp {
     text-shadow: 2px 2px 5px rgba(112, 27, 168, 0.721);
     color: white;
+    font-weight: bold;
     font-size: 25px;
     margin-bottom: 5px;
     margin-top: 0px;
