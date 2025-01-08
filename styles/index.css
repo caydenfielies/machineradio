@@ -127,7 +127,6 @@ body a {
 
 .home-nav-button {
     cursor: pointer;
-    border: 1px solid;
     border-radius: 25px;
     font-size: 16px;
     padding: 5px 10px;
@@ -139,7 +138,6 @@ body a {
 }
 
 .home-nav-button:hover {
-    background-color: rgb(248, 200, 220);
     border: 1px solid rgb(248, 200, 220);
 }
 
