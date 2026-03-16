@@ -10,17 +10,21 @@ export default function HeroShader() {
   useFrame(({ clock, size }) => {
     if (!materialRef.current) return;
     materialRef.current.uniforms.u_time.value = clock.getElapsedTime();
-    materialRef.current.uniforms.u_resolution.value.set(
-      size.width,
-      size.height,
-    );
+    materialRef.current.uniforms.u_resolution.value.set(size.width, size.height);
   });
 
   return (
-    <mesh>
+    /*
+      renderOrder={-1} + depthWrite={false} + depthTest={false}
+      ensures this full-screen plane is always drawn first (background),
+      and never occludes the CD model sitting in front of it.
+    */
+    <mesh renderOrder={-1}>
       <planeGeometry args={[2, 2]} />
       <shaderMaterial
         ref={materialRef}
+        depthWrite={false}
+        depthTest={false}
         uniforms={{
           u_time: { value: 0 },
           u_resolution: { value: new THREE.Vector2() },
