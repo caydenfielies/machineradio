@@ -35,7 +35,7 @@ export default function Hero() {
         {/* IBL — soft environment that matches the dark shader */}
         <Environment preset="night" />
 
-        {/* CD model — offset to the right half */}
+        {/* CD model */}
         <Suspense fallback={null}>
           <group position={[0, 0, 0]} scale={0.1}>
             <CDModel />
@@ -43,7 +43,22 @@ export default function Hero() {
         </Suspense>
       </Canvas>
 
-      <div className="absolute inset-0 flex items-center pointer-events-none"></div>
+      {/* Text overlay */}
+      <div className="absolute inset-0 flex flex-col justify-end pb-12 px-8 md:px-16 pointer-events-none">
+        <p className="text-[10px] font-mono text-white/40 tracking-[0.5em] uppercase mb-3">
+          Sound · Production · Creative
+        </p>
+        <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-white uppercase tracking-tight leading-none">
+          Machine<br />Radio
+        </h1>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 right-8 md:right-16 flex flex-col items-center gap-2 pointer-events-none">
+        <span className="text-[9px] font-mono text-white/30 tracking-[0.4em] uppercase rotate-90 origin-center translate-y-4">
+          Scroll
+        </span>
+      </div>
     </div>
   );
 }
