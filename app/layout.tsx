@@ -1,6 +1,54 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+
+const editorialNew = localFont({
+  src: [
+    {
+      path: "../public/Fonts/PPEditorialNew-Ultralight.otf",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "../public/Fonts/PPEditorialNew-UltralightItalic.otf",
+      weight: "200",
+      style: "italic",
+    },
+  ],
+  variable: "--font-editorial-new",
+});
+
+const ppNeueYork = localFont({
+  src: [
+    {
+      path: "../public/Fonts/PPNeueYork-CondensedLight.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../public/Fonts/PPNeueYork-CondensedMedium.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/Fonts/PPNeueYork-CondensedExtrabold.otf",
+      weight: "800",
+      style: "normal",
+    },
+  ],
+  variable: "--font-pp-neue-york",
+});
+
+const optiAltoGreeting = localFont({
+  src: [
+    {
+      path: "../public/Fonts/OPTIAltoGreeting Script.otf",
+      style: "normal",
+    },
+  ],
+  variable: "--font-optiAlto",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +73,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${optiAltoGreeting.variable} ${editorialNew.variable} ${ppNeueYork.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
