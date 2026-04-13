@@ -2,7 +2,7 @@ export default function Biograpghy() {
   return (
     <>
       <h1
-        className="text-6xl"
+        className="text-6xl px-12.5 h-[50vh] mt-20"
         style={{ fontFamily: "var(--font-editorial-new)" }}
       >
         <span

@@ -14,7 +14,7 @@ export default function FeaturedWork() {
   }
 
   return (
-    <section ref={sectionRef} className=" py-2 mt-30">
+    <section ref={sectionRef} className=" py-2 mt-30 px-[50px]">
       <span
         className="text-3xl mr-20"
         style={{ fontFamily: "var(--font-pp-neue-york)", fontWeight: "800" }}

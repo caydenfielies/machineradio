@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import { tracks, getTrackBySlug } from "@/lib/tracks";
-import Header from "@/components/header";
 
 export function generateStaticParams() {
   return tracks.map((t) => ({ slug: t.slug }));
@@ -18,9 +17,14 @@ export default async function TrackPage({
 
   return (
     <>
-      <Header />
       <main style={{ padding: "6rem 4rem" }}>
-        <div style={{ borderBottom: "1px solid #d4d4d4", paddingBottom: "3rem", marginBottom: "3rem" }}>
+        <div
+          style={{
+            borderBottom: "1px solid #d4d4d4",
+            paddingBottom: "3rem",
+            marginBottom: "3rem",
+          }}
+        >
           <h1
             style={{
               fontFamily: "var(--font-editorial-new)",
@@ -34,7 +38,9 @@ export default async function TrackPage({
           </h1>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+        <div
+          style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}
+        >
           <div style={{ display: "flex", gap: "4rem" }}>
             <div>
               <p
