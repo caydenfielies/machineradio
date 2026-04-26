@@ -98,7 +98,7 @@ export default function Preloader() {
   return (
     <div
       ref={overlayRef}
-      className="fixed inset-0 z-[9999] bg-neutral-950 text-white flex flex-col items-center justify-center will-change-transform"
+      className="fixed inset-0 z-[9999] bg-black text-white flex flex-col items-center justify-center will-change-transform"
     >
       <span ref={starRef} className="text-7xl inline-block">
         ✷

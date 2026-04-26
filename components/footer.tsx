@@ -2,7 +2,7 @@ import styles from "./textcircle.module.css";
 export default function Footer() {
   return (
     <>
-      <div className="footer-container relative flex justify-center items-center h-[55vh] md:h-screen w-screen bg-neutral-950 text-white mt-10 px-12.5 py-10 z-100">
+      <div className="footer-container relative flex justify-center items-center h-[55vh] md:h-screen w-screen bg-black text-white mt-10 px-12.5 py-10 z-1000">
         <svg
           className="text-circle absolute inset-0 m-auto pointer-events-none overflow-visible w-[220px] h-[220px] md:w-[280px] md:h-[280px]"
           viewBox="0 0 280 280"
@@ -16,6 +16,7 @@ export default function Footer() {
 
           <g className={styles.ring}>
             <text
+              xmlSpace="preserve"
               style={{
                 fontFamily: "var(--font-ft-calhern)",
                 fontSize: "25px",
@@ -28,19 +29,25 @@ export default function Footer() {
                 textLength="691"
                 lengthAdjust="spacing"
               >
-                Let's get in touch ✹ Let's get in touch ✹
+                {"Let's get in touch ✹ Let's get in touch ✹ "}
               </textPath>
             </text>
           </g>
         </svg>
         <h1 className="pl-logo text-9xl">✷</h1>
         <h1 className="main-text "></h1>
-        <div className="bottom-text absolute bottom-10">
+        <div className="bottom-text absolute flex justify-between w-full bottom-10 px-5">
           <h1
             className="text-xl md:text-4xl"
             style={{ fontFamily: "var(--font-ft-calhern)" }}
           >
             Project Lotus
+          </h1>
+          <h1
+            className="text-xl md:text-4xl"
+            style={{ fontFamily: "var(--font-ft-calhern)" }}
+          >
+            2026
           </h1>
         </div>
       </div>
