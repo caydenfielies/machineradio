@@ -130,7 +130,7 @@ export default function Hero() {
 
         <div
           className="bottom-text text-xl md:text-3xl lg:text-4xl px-4 text-center"
-          style={{ fontFamily: "var(--font-ft-calhern)", fontWeight: "200" }}
+          style={{ fontFamily: "var(--font-ft-calhern)" }}
         >
           <p>
             <span ref={lotusRef}>Project Lotus</span>
