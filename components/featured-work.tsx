@@ -1,83 +1,130 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { tracks } from "@/lib/tracks";
 
-export default function FeaturedWork() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [cursor, setCursor] = useState({ x: 0, y: 0 });
-  const sectionRef = useRef<HTMLDivElement>(null);
+gsap.registerPlugin(ScrollTrigger);
 
-  function handleMouseMove(e: React.MouseEvent) {
-    setCursor({ x: e.clientX, y: e.clientY });
-  }
+export default function FeaturedWork() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const scrollerRef = useRef<HTMLDivElement>(null);
+
+  const scrollByCard = (dir: 1 | -1) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const card = el.querySelector<HTMLElement>("[data-card]");
+    const step = card ? card.offsetWidth + 24 : el.clientWidth;
+    el.scrollBy({ left: dir * step, behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+    const wraps = section.querySelectorAll<HTMLElement>("[data-parallax]");
+
+    const triggers = Array.from(wraps).map((wrap) =>
+      gsap.fromTo(
+        wrap,
+        { yPercent: -12, scale: 1.18 },
+        {
+          yPercent: 12,
+          scale: 1.18,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1,
+          },
+        },
+      ),
+    );
+
+    return () => {
+      triggers.forEach((t) => {
+        t.scrollTrigger?.kill();
+        t.kill();
+      });
+    };
+  }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="py-2 mt-30 md:mt-20 lg:mt-70 px-4 md:px-8 lg:px-12.5"
-    >
-      <span
-        className="text-2xl md:text-3xl mr-20"
-        style={{ fontFamily: "var(--font-pp-neue-york)", fontWeight: "800" }}
+    <section ref={sectionRef} className="mt-30 md:mt-20 lg:mt-70">
+      <div className="flex items-end justify-between px-4 md:px-8 lg:px-12.5 mb-6">
+        <span
+          className="text-2xl md:text-3xl"
+          style={{ fontFamily: "var(--font-pp-neue-york)", fontWeight: "800" }}
+        >
+          FEATURED WORK
+        </span>
+        <div className="hidden md:flex gap-2">
+          <button
+            type="button"
+            aria-label="Previous"
+            onClick={() => scrollByCard(-1)}
+            className="w-10 h-10 rounded-full border border-zinc-700 flex items-center justify-center hover:bg-black hover:text-white transition-colors"
+          >
+            ←
+          </button>
+          <button
+            type="button"
+            aria-label="Next"
+            onClick={() => scrollByCard(1)}
+            className="w-10 h-10 rounded-full border border-zinc-700 flex items-center justify-center hover:bg-black hover:text-white transition-colors"
+          >
+            →
+          </button>
+        </div>
+      </div>
+
+      <div
+        ref={scrollerRef}
+        className="flex gap-6 overflow-x-auto snap-x snap-proximity px-4 md:px-8 lg:px-12.5 scroll-pl-4 md:scroll-pl-8 lg:scroll-pl-12.5 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
-        FEATURED WORK
-      </span>
-      <div className="border-t border-zinc-700">
         {tracks.map((track, i) => (
           <Link
             key={i}
             href={`/work/${track.slug}`}
-            className="relative flex flex-col md:flex-row md:items-center justify-between md:justify-stretch border-b border-zinc-700 py-3 md:py-6 transition-colors duration-150 hover:bg-black hover:text-white cursor-pointer gap-3"
-            onMouseEnter={() => setHoveredIndex(i)}
-            onMouseLeave={() => setHoveredIndex(null)}
-            onMouseMove={handleMouseMove}
+            data-card
+            className="snap-start shrink-0 w-[75vw] sm:w-[60vw] md:w-[40vw] lg:w-[28vw] xl:w-[22vw] group"
           >
-            <div className="flex flex-col md:flex-row md:items-center md:justify-stretch md:w-full gap-3 md:gap-0">
-              {/* Song */}
-              <span
-                className="w-full md:w-1/2 text-2xl md:text-3xl"
+            <div className="relative aspect-square overflow-hidden bg-zinc-900">
+              <div
+                data-parallax
+                className="absolute inset-0 w-full h-full will-change-transform"
+              >
+                <img
+                  src={track.image}
+                  alt={`${track.song} by ${track.artist}`}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+            </div>
+            <div className="mt-4 flex flex-col gap-1">
+              <h3
+                className="text-2xl md:text-3xl leading-tight"
                 style={{ fontFamily: "var(--font-editorial-new)" }}
               >
-                {track.song} by {track.artist}
-              </span>
-
-              {/* Date */}
-              <span className="md:w-1/6 text-zinc-500 text-sm">
-                {track.date}
-              </span>
-
-              {/* Producers */}
-              <div className="flex items-center gap-2 text-xl flex-wrap">
-                <span className="text-lg" style={{ fontWeight: "300" }}>
-                  Produced by{" "}
-                </span>
+                {track.song}
+              </h3>
+              <p className="text-sm text-zinc-500 flex items-center justify-between">
+                <span>{track.artist}</span>
+                <span>{track.date}</span>
+              </p>
+              <p
+                className="text-sm mt-1"
+                style={{ fontFamily: "var(--font-pp-neue-york)" }}
+              >
+                <span className="text-zinc-500">Produced by </span>
                 {track.producers}
-              </div>
+              </p>
             </div>
           </Link>
         ))}
       </div>
-
-      {/* Cursor-following image */}
-      {hoveredIndex !== null && (
-        <div
-          className="fixed pointer-events-none z-50 overflow-hidden rounded-sm hidden [@media(hover:hover)]:block"
-          style={{
-            left: cursor.x + 24,
-            top: cursor.y - 80,
-            width: 220,
-            height: 160,
-          }}
-        >
-          <img
-            src={tracks[hoveredIndex].image}
-            alt={tracks[hoveredIndex].song}
-            className="w-full h-full object-cover"
-          />
-        </div>
-      )}
     </section>
   );
 }

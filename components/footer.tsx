@@ -36,7 +36,7 @@ export default function Footer() {
         </svg>
         <h1 className="pl-logo text-9xl">✷</h1>
         <h1 className="main-text "></h1>
-        <div className="bottom-text absolute flex justify-between w-full bottom-10 px-5">
+        <div className="bottom-text absolute flex justify-between w-full bottom-10 px-5 md:px-12.5">
           <h1
             className="text-xl md:text-4xl"
             style={{ fontFamily: "var(--font-ft-calhern)" }}
