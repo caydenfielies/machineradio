@@ -27,7 +27,7 @@ export default function Opener() {
 
           <div className="last-text flex items-end flex-1">
             <h1
-              className="text-xl md:text-xl lg:text-3xl md:text-left md:w-100"
+              className="text-xl md:text-xl lg:text-3xl md:text-left lg:w-120"
               style={{ fontFamily: "var(--font-editorial-new)" }}
             >
               Innovation my core <br />

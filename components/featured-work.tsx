@@ -63,7 +63,7 @@ export default function FeaturedWork() {
       {/* Cursor-following image */}
       {hoveredIndex !== null && (
         <div
-          className="fixed pointer-events-none z-50 overflow-hidden rounded-sm"
+          className="fixed pointer-events-none z-50 overflow-hidden rounded-sm hidden [@media(hover:hover)]:block"
           style={{
             left: cursor.x + 24,
             top: cursor.y - 80,

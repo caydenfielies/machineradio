@@ -1,4 +1,3 @@
-import Header from "@/components/header";
 import { notFound } from "next/navigation";
 import { tracks, getTrackBySlug } from "@/lib/tracks";
 
@@ -18,14 +17,10 @@ export default async function TrackPage({
 
   return (
     <>
-      <Header />
-      <main style={{ padding: "6rem 4rem" }}>
+      <main className="px-4 py-20 sm:px-8 sm:py-24 md:px-12 lg:px-16 lg:py-24">
         <div
-          style={{
-            borderBottom: "1px solid #d4d4d4",
-            paddingBottom: "3rem",
-            marginBottom: "3rem",
-          }}
+          className="mb-8 pb-8 sm:mb-12 sm:pb-12"
+          style={{ borderBottom: "1px solid #d4d4d4" }}
         >
           <h1
             style={{
@@ -43,7 +38,7 @@ export default async function TrackPage({
         <div
           style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}
         >
-          <div style={{ display: "flex", gap: "4rem" }}>
+          <div className="flex flex-wrap gap-x-10 gap-y-6 sm:gap-x-16">
             <div>
               <p
                 style={{
