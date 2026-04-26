@@ -1,3 +1,4 @@
+import Header from "@/components/header";
 import { notFound } from "next/navigation";
 import { tracks, getTrackBySlug } from "@/lib/tracks";
 
@@ -17,6 +18,7 @@ export default async function TrackPage({
 
   return (
     <>
+      <Header />
       <main style={{ padding: "6rem 4rem" }}>
         <div
           style={{

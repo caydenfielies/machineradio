@@ -14,9 +14,12 @@ export default function FeaturedWork() {
   }
 
   return (
-    <section ref={sectionRef} className=" py-2 mt-30 px-[50px]">
+    <section
+      ref={sectionRef}
+      className="py-2 mt-30 md:mt-20 lg:mt-70 px-4 md:px-8 lg:px-12.5"
+    >
       <span
-        className="text-3xl mr-20"
+        className="text-2xl md:text-3xl mr-20"
         style={{ fontFamily: "var(--font-pp-neue-york)", fontWeight: "800" }}
       >
         FEATURED WORK
@@ -26,28 +29,32 @@ export default function FeaturedWork() {
           <Link
             key={i}
             href={`/work/${track.slug}`}
-            className="relative flex items-center justify-stretch border-b border-zinc-700 py-6 transition-colors duration-150 hover:bg-black hover:text-white cursor-pointer"
+            className="relative flex flex-col md:flex-row md:items-center justify-between md:justify-stretch border-b border-zinc-700 py-3 md:py-6 transition-colors duration-150 hover:bg-black hover:text-white cursor-pointer gap-3"
             onMouseEnter={() => setHoveredIndex(i)}
             onMouseLeave={() => setHoveredIndex(null)}
             onMouseMove={handleMouseMove}
           >
-            {/* Song */}
-            <span
-              className="w-1/2 text-3xl"
-              style={{ fontFamily: "var(--font-editorial-new)" }}
-            >
-              {track.song} by {track.artist}
-            </span>
-
-            {/* Date */}
-            <span className="w-1/6 text-zinc-500 text-sm">{track.date}</span>
-
-            {/* Producers */}
-            <div className="flex items-center gap-2 text-2xl flex-wrap">
-              <span className="text-lg" style={{ fontWeight: "300" }}>
-                Produced by{" "}
+            <div className="flex flex-col md:flex-row md:items-center md:justify-stretch md:w-full gap-3 md:gap-0">
+              {/* Song */}
+              <span
+                className="w-full md:w-1/2 text-2xl md:text-3xl"
+                style={{ fontFamily: "var(--font-editorial-new)" }}
+              >
+                {track.song} by {track.artist}
               </span>
-              {track.producers}
+
+              {/* Date */}
+              <span className="md:w-1/6 text-zinc-500 text-sm">
+                {track.date}
+              </span>
+
+              {/* Producers */}
+              <div className="flex items-center gap-2 text-xl flex-wrap">
+                <span className="text-lg" style={{ fontWeight: "300" }}>
+                  Produced by{" "}
+                </span>
+                {track.producers}
+              </div>
             </div>
           </Link>
         ))}

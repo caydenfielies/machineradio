@@ -2,11 +2,11 @@ import Image from "next/image";
 export default function Opener() {
   return (
     <>
-      <div className="opener-container flex flex-col items-center justify-center h-screen mt-20">
-        <div className="inner-container flex gap-10 justify-between">
-          <div className="first-text">
+      <div className="opener-container flex flex-col items-center justify-center h-auto md:h-screen mt-10 md:mt-20 px-4 text-center">
+        <div className="inner-container flex flex-col md:flex-row gap-4 md:gap-10 justify-between items-center md:items-stretch w-full">
+          <div className="first-text flex-1">
             <h1
-              className="text-3xl"
+              className="text-xl md:text-xl lg:text-3xl md:text-right"
               style={{ fontFamily: "var(--font-editorial-new)" }}
             >
               A fragment of my mind
@@ -19,14 +19,15 @@ export default function Opener() {
 
           <Image
             src="/Images/horsePoster.png"
-            width={300}
-            height={500}
+            width={200}
+            height={350}
             alt="Horse."
+            className="w-50 md:w-48 lg:w-64 h-auto"
           />
 
-          <div className="last-text flex items-end w-120">
+          <div className="last-text flex items-end flex-1">
             <h1
-              className="text-3xl"
+              className="text-xl md:text-xl lg:text-3xl md:text-left md:w-100"
               style={{ fontFamily: "var(--font-editorial-new)" }}
             >
               Innovation my core <br />

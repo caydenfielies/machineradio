@@ -50,6 +50,22 @@ const optiAltoGreeting = localFont({
   variable: "--font-optiAlto",
 });
 
+const ftCalhern = localFont({
+  src: [
+    {
+      path: "../public/Fonts/FTCalhernTrial-WideUltralight.otf",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "../public/Fonts/FTCalhernTrial-WideBook.otf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-ft-calhern",
+});
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -63,6 +79,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Project Lotus",
   description: "Project Lotus by Lee.",
+  viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({
@@ -73,7 +90,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${optiAltoGreeting.variable} ${editorialNew.variable} ${ppNeueYork.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${optiAltoGreeting.variable} ${editorialNew.variable} ${ppNeueYork.variable} ${ftCalhern.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

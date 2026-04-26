@@ -1,17 +1,35 @@
 export default function Closer() {
   return (
     <>
-      <div className="closer-container flex items-center justify-center h-screen">
+      <div className="closer-container flex items-center justify-center h-auto md:h-screen">
         <h1
-          className="text-5xl px-12.5 h-[50vh] mt-20"
+          className="text-2xl md:text-4xl lg:text-5xl px-4 md:px-8 lg:px-12.5 h-auto md:h-[50vh] mt-10 md:mt-20"
           style={{ fontFamily: "var(--font-editorial-new)" }}
         >
-          Message to the Youth <br /> No matter what you do in this life <br />
-          Remember that perfection is an illusion <br />
-          Be kind <br /> Be patient <br />
-          Live <br />
-          Be in unison with others <br /> And find the beauty
+          My Message to the Youth:
+          <br />
+          No matter what you do
+          <br />
+          Be kind
+          <br />
+          Be Positive
+          <br />
+          Be patient
+          <br />& serve your purpose
         </h1>
+
+        {/* <div className="video-canvas absolute bg-black">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/fallback.jpg"
+          className="w-screen h-screen object-cover"
+        >
+          <source src="/Hero/projectlotus_hero.mp4" type="video/mp4" />
+        </video>
+      </div> */}
       </div>
     </>
   );

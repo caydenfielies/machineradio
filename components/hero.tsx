@@ -1,73 +1,87 @@
+"use client";
+
+import { useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "@/components/ui/button";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    const section = sectionRef.current;
+    if (!video || !section) return;
+
+    gsap.fromTo(
+      video,
+      { y: 0 },
+      {
+        y: 220,
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: "bottom top",
+          scrub: 1,
+          markers: false,
+        },
+      },
+    );
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
+
   return (
-    <section className="w-screen h-screen">
+    <section
+      ref={sectionRef}
+      className="w-full h-screen flex items-center justify-center overflow-hidden"
+    >
       <div
-        id="project-lotus-text"
-        className="flex flex-col justify-end absolute bottom-10 m-0 z-10 ml-12.5 px-6 py-7 border rounded-md border-white"
-        style={{ mixBlendMode: "difference", color: "white" }}
+        className="side-texts text-md md:text-lg lg:text-3xl xl:text-4xl flex justify-between w-full px-4 md:px-6 lg:px-8 xl:px-12.5 absolute top-6 md:top-6 lg:top-8"
+        style={{ fontFamily: "var(--font-editorial-new)" }}
       >
-        <h1
-          className="text-[50px] ml-4"
-          style={{ fontFamily: "var(--font-editorial-new)" }}
-        >
-          <span
-            className="text-[80px] -ml-6.25"
-            style={{ fontFamily: "var(--font-optiAlto)" }}
-          >
-            P
-          </span>
-          ROJECT ✷
-          <span
-            className="text-[80px] -ml-2"
-            style={{ fontFamily: "var(--font-optiAlto)" }}
-          >
-            L
-          </span>
-          OTUS
-        </h1>
-
-        <div className="scroll-down-text absolute right-5">
-          <p>Scroll down</p>
-        </div>
-
-        <h1
-          className="text-3xl w-200 -mt-5"
-          style={{
-            fontFamily: "var(--font-editorial-new)",
-            mixBlendMode: "difference",
-            color: "white",
-          }}
-        >
-          Producer and composer from South Africa, crafting precise and evolving
-          soundscapes.
-        </h1>
-
-        <h1
-          className="text-xl mt-5 flex justify-between"
-          style={{ fontFamily: "var(--font-editorial-new)" }}
-        >
-          <span>✦</span>
-          <span>✦</span>
-        </h1>
-
-        <Button variant="outline" className="w-35 mt-5 px-5 py-3">
-          View Featured Work
-        </Button>
+        <p>Since</p>
+        <p>2019</p>
       </div>
 
-      <div className="video-canvas absolute bg-black">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/fallback.jpg"
-          className="w-screen h-screen object-cover"
+      <div className="main-hero flex flex-col items-center gap-4 md:gap-6 lg:gap-10 justify-center">
+        <div
+          className="top-text text-4xl md:text-4xl lg:text-5xl px-4 text-center"
+          style={{ fontFamily: "var(--font-ft-calhern)" }}
         >
-          <source src="/Hero/projectlotus_hero.mp4" type="video/mp4" />
-        </video>
+          <p>Creative Expression + Innovation</p>
+        </div>
+
+        <div className="video-canvas w-80 h-68 md:w-80 md:h-56 lg:w-180 lg:h-100 flex items-center overflow-hidden">
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/fallback.jpg"
+            className="object-cover"
+          >
+            <source src="/Hero/projectlotus_hero.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        <div
+          className="bottom-text text-xl md:text-3xl lg:text-4xl px-4 text-center"
+          style={{ fontFamily: "var(--font-ft-calhern)", fontWeight: "200" }}
+        >
+          <p>
+            Project Lotus{" "}
+            <span style={{ fontFamily: "var(--font-editorial-new)" }}>
+              by Lee
+            </span>
+          </p>
+        </div>
       </div>
     </section>
   );
