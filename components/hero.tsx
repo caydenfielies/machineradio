@@ -120,6 +120,7 @@ export default function Hero() {
             muted
             loop
             playsInline
+            preload="metadata"
             poster="/fallback.jpg"
             className="h-full object-cover"
           >
@@ -132,13 +133,7 @@ export default function Hero() {
           style={{ fontFamily: "var(--font-ft-calhern)", fontWeight: "200" }}
         >
           <p>
-            <span ref={lotusRef}>Project Lotus</span>{" "}
-            <span
-              ref={byLeeRef}
-              style={{ fontFamily: "var(--font-editorial-new)" }}
-            >
-              by Lee
-            </span>
+            <span ref={lotusRef}>Project Lotus</span>
           </p>
         </div>
       </div>

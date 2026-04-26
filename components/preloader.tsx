@@ -12,6 +12,7 @@ export default function Preloader() {
   const overlayRef = useRef<HTMLDivElement>(null);
   const labelRef = useRef<HTMLSpanElement>(null);
   const counterRef = useRef<HTMLSpanElement>(null);
+  const starRef = useRef<HTMLSpanElement>(null);
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
@@ -22,13 +23,28 @@ export default function Preloader() {
       labelRef.current.textContent = "X".repeat("PROJECT LOTUS".length);
 
     const tl = gsap.timeline();
+    if (starRef.current) {
+      tl.fromTo(
+        starRef.current,
+        { rotate: 0 },
+        {
+          rotate: 360,
+          duration: MIN_DISPLAY_MS / 1000,
+          ease: "power2.inOut",
+          transformOrigin: "50% 50%",
+        },
+        0,
+      );
+    }
     tl.to(counter, {
       v: 100,
       duration: MIN_DISPLAY_MS / 1000,
       ease: "power2.out",
       onUpdate: () => {
         if (counterRef.current)
-          counterRef.current.textContent = String(Math.round(counter.v)).padStart(3, "0");
+          counterRef.current.textContent = String(
+            Math.round(counter.v),
+          ).padStart(3, "0");
       },
     });
     if (labelRef.current) {
@@ -48,14 +64,7 @@ export default function Preloader() {
       );
     }
 
-    const ready = Promise.all([
-      document.fonts?.ready ?? Promise.resolve(),
-      document.readyState === "complete"
-        ? Promise.resolve()
-        : new Promise<void>((res) =>
-            window.addEventListener("load", () => res(), { once: true }),
-          ),
-    ]);
+    const ready = document.fonts?.ready ?? Promise.resolve();
 
     let cancelled = false;
 
@@ -91,10 +100,12 @@ export default function Preloader() {
       ref={overlayRef}
       className="fixed inset-0 z-[9999] bg-neutral-950 text-white flex flex-col items-center justify-center will-change-transform"
     >
-      <span className="text-9xl">✷</span>
+      <span ref={starRef} className="text-7xl inline-block">
+        ✷
+      </span>
       <span
         ref={labelRef}
-        className="mt-8 text-xl tracking-[0.4em]"
+        className="mt-8 text-md tracking-[0.4em]"
         style={{ fontFamily: "var(--font-ft-calhern)" }}
       >
         PROJECT LOTUS
@@ -102,7 +113,7 @@ export default function Preloader() {
       <span
         ref={counterRef}
         className="absolute bottom-8 right-8 text-sm tabular-nums"
-        style={{ fontFamily: "var(--font-pp-neue-york)" }}
+        style={{ fontFamily: "var(--font-ft-calhern)" }}
       >
         000
       </span>
