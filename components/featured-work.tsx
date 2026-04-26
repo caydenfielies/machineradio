@@ -65,7 +65,7 @@ export default function FeaturedWork() {
             type="button"
             aria-label="Previous"
             onClick={() => scrollByCard(-1)}
-            className="w-10 h-10 rounded-full border border-zinc-700 flex items-center justify-center hover:bg-black hover:text-white transition-colors"
+            className="w-10 h-10 border border-zinc-700 flex items-center justify-center hover:bg-black hover:text-white transition-colors"
           >
             ←
           </button>
@@ -73,7 +73,7 @@ export default function FeaturedWork() {
             type="button"
             aria-label="Next"
             onClick={() => scrollByCard(1)}
-            className="w-10 h-10 rounded-full border border-zinc-700 flex items-center justify-center hover:bg-black hover:text-white transition-colors"
+            className="w-10 h-10 border border-zinc-700 flex items-center justify-center hover:bg-black hover:text-white transition-colors"
           >
             →
           </button>
