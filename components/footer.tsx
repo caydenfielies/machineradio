@@ -1,65 +1,16 @@
 export default function Footer() {
   return (
     <>
-      <div className="footer-container h-screen w-screen bg-neutral-950 text-white mt-30 px-12.5 py-10">
-        <div className="inner-footer flex flex-col gap-30 h-full">
-          <div className="email">
-            <p
-              className="text-3xl"
-              style={{
-                fontFamily: "var(--font-pp-neue-york)",
-                fontWeight: "500",
-              }}
-            >
-              Let's work together
-            </p>
-            <h1
-              className="text-6xl mt-2"
-              style={{ fontFamily: "var(--font-editorial-new)" }}
-            >
-              lee@projectlotus.studio
-            </h1>
-          </div>
-
-          <div className="socials">
-            <h1
-              className="text-6xl"
-              style={{ fontFamily: "var(--font-editorial-new)" }}
-            >
-              <span
-                className="text-3xl mr-20"
-                style={{
-                  fontFamily: "var(--font-pp-neue-york)",
-                  fontWeight: "500",
-                }}
-              >
-                Find me on
-              </span>
-              Instagram
-            </h1>
-          </div>
-
-          <div className="project-lotus flex items-end z-10">
-            <h1
-              className="text-[70px]"
-              style={{ fontFamily: "var(--font-editorial-new)" }}
-            >
-              <span
-                className="text-[110px] -ml-6.25"
-                style={{ fontFamily: "var(--font-optiAlto)" }}
-              >
-                P
-              </span>
-              ROJECT
-              <span
-                className="text-[110px]"
-                style={{ fontFamily: "var(--font-optiAlto)" }}
-              >
-                L
-              </span>
-              OTUS
-            </h1>
-          </div>
+      <div className="footer-container relative flex justify-center items-center h-[55vh] md:h-screen w-screen bg-neutral-950 text-white mt-30 px-12.5 py-10 z-100">
+        <h1 className="pl-logo text-9xl">✷</h1>
+        <h1 className="main-text "></h1>
+        <div className="bottom-text absolute bottom-10">
+          <h1
+            className="text-xl md:text-4xl"
+            style={{ fontFamily: "var(--font-ft-calhern)" }}
+          >
+            Project Lotus
+          </h1>
         </div>
       </div>
     </>
