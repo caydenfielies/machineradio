@@ -18,8 +18,8 @@ export default function SmoothScroll({
       content: "#smooth-content",
       smooth: 1.2,
       effects: true,
-      normalizeScroll: true,
-      smoothTouch: 0.1,
+      normalizeScroll: false,
+      smoothTouch: false,
     });
 
     return () => {
