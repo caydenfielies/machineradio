@@ -49,7 +49,7 @@ export default function Hero() {
         <p>2019</p>
       </div>
 
-      <div className="main-hero flex flex-col items-center gap-3 md:gap-6 lg:gap-10 justify-center">
+      <div className="main-hero flex flex-col items-center gap-10 md:gap-6 lg:gap-10 justify-center">
         <div
           className="top-text text-5xl lg:text-5xl px-4 text-center"
           style={{ fontFamily: "var(--font-ft-calhern)" }}
@@ -61,7 +61,7 @@ export default function Hero() {
           </p>
         </div>
 
-        <div className="video-canvas w-80 h-68 md:w-80 md:h-56 lg:w-180 lg:h-100 flex items-center overflow-hidden">
+        <div className="video-canvas w-90 h-85 md:w-80 md:h-56 lg:w-180 lg:h-100 flex items-center overflow-hidden">
           <video
             ref={videoRef}
             autoPlay
@@ -69,7 +69,7 @@ export default function Hero() {
             loop
             playsInline
             poster="/fallback.jpg"
-            className="object-cover"
+            className="h-full object-cover"
           >
             <source src="/Hero/projectlotus_hero.mp4" type="video/mp4" />
           </video>
