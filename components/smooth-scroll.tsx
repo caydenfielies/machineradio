@@ -19,7 +19,7 @@ export default function SmoothScroll({
       smooth: 1.2,
       effects: true,
       normalizeScroll: { allowNestedScroll: true },
-      smoothTouch: 0.1,
+      smoothTouch: 0.5,
     });
 
     return () => {

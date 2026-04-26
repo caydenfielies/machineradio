@@ -11,6 +11,24 @@ gsap.registerPlugin(ScrollTrigger);
 export default function FeaturedWork() {
   const sectionRef = useRef<HTMLElement>(null);
   const scrollerRef = useRef<HTMLDivElement>(null);
+  const dragRef = useRef({ x: 0, y: 0, dragged: false });
+
+  const onPointerDown = (e: React.PointerEvent) => {
+    dragRef.current = { x: e.clientX, y: e.clientY, dragged: false };
+  };
+  const onPointerMove = (e: React.PointerEvent) => {
+    if (
+      Math.abs(e.clientX - dragRef.current.x) > 8 ||
+      Math.abs(e.clientY - dragRef.current.y) > 8
+    ) {
+      dragRef.current.dragged = true;
+    }
+  };
+  const onClick = (e: React.MouseEvent) => {
+    if (dragRef.current.dragged) {
+      e.preventDefault();
+    }
+  };
 
   const scrollByCard = (dir: 1 | -1) => {
     const el = scrollerRef.current;
@@ -89,6 +107,9 @@ export default function FeaturedWork() {
             key={i}
             href={`/work/${track.slug}`}
             data-card
+            onPointerDown={onPointerDown}
+            onPointerMove={onPointerMove}
+            onClick={onClick}
             className="snap-start shrink-0 w-[75vw] sm:w-[60vw] md:w-[40vw] lg:w-[28vw] xl:w-[22vw] group"
           >
             <div className="relative aspect-square overflow-hidden bg-zinc-900">
