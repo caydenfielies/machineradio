@@ -4,11 +4,21 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { tracks } from "@/lib/tracks";
+import { tracks as allTracks, type Track } from "@/lib/tracks";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function FeaturedWork() {
+type FeaturedWorkProps = {
+  tracks?: Track[];
+  title?: string;
+  className?: string;
+};
+
+export default function FeaturedWork({
+  tracks = allTracks,
+  title = "FEATURED WORK",
+  className = "mt-30 md:mt-20 lg:mt-70",
+}: FeaturedWorkProps = {}) {
   const sectionRef = useRef<HTMLElement>(null);
   const scrollerRef = useRef<HTMLDivElement>(null);
   const dragRef = useRef({ x: 0, y: 0, dragged: false });
@@ -70,20 +80,20 @@ export default function FeaturedWork() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="mt-30 md:mt-20 lg:mt-70">
+    <section ref={sectionRef} className={className}>
       <div className="flex items-end justify-between px-4 md:px-8 lg:px-12.5 mb-6">
         <span
           className="text-2xl md:text-3xl"
           style={{ fontFamily: "var(--font-pp-neue-york)", fontWeight: "800" }}
         >
-          FEATURED WORK
+          {title}
         </span>
         <div className="hidden md:flex gap-2">
           <button
             type="button"
             aria-label="Previous"
             onClick={() => scrollByCard(-1)}
-            className="w-10 h-10 border border-zinc-700 flex items-center justify-center hover:bg-black hover:text-white transition-colors"
+            className="w-10 h-10 border border-zinc-700 flex items-center justify-center hover:bg-black hover:text-white transition-colors cursor-pointer"
           >
             ←
           </button>
@@ -91,7 +101,7 @@ export default function FeaturedWork() {
             type="button"
             aria-label="Next"
             onClick={() => scrollByCard(1)}
-            className="w-10 h-10 border border-zinc-700 flex items-center justify-center hover:bg-black hover:text-white transition-colors"
+            className="w-10 h-10 border border-zinc-700 flex items-center justify-center hover:bg-black hover:text-white transition-colors cursor-pointer"
           >
             →
           </button>

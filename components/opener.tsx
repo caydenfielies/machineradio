@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ParallaxImage from "@/components/parallax-image";
 export default function Opener() {
   return (
     <>
@@ -17,12 +17,10 @@ export default function Opener() {
             </h1>
           </div>
 
-          <Image
+          <ParallaxImage
             src="/Images/horsePoster.png"
-            width={200}
-            height={350}
             alt="Horse."
-            className="w-50 md:w-48 lg:w-64 h-auto"
+            className="w-50 md:w-48 lg:w-64 aspect-[200/250]"
           />
 
           <div className="last-text flex items-end flex-1">
