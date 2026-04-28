@@ -218,6 +218,7 @@ export default async function TrackPage({
         tracks={tracks.filter((t) => t.slug !== track.slug)}
         title="MORE WORK"
         className="mt-12 md:mt-16"
+        showTransition={false}
       />
 
       <Footer />

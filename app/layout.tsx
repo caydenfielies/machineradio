@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import SmoothScroll from "@/components/smooth-scroll";
 import Preloader from "@/components/preloader";
+import PageTransition from "@/components/page-transition";
 
 const editorialNew = localFont({
   src: [
@@ -97,6 +98,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <Preloader />
+        <PageTransition />
         <Header />
         <SmoothScroll>{children}</SmoothScroll>
       </body>

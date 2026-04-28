@@ -2,9 +2,14 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { tracks as allTracks, type Track } from "@/lib/tracks";
+import {
+  TRANSITION_EVENT,
+  TRANSITION_FADE_IN_MS,
+} from "@/components/page-transition";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,16 +17,19 @@ type FeaturedWorkProps = {
   tracks?: Track[];
   title?: string;
   className?: string;
+  showTransition?: boolean;
 };
 
 export default function FeaturedWork({
   tracks = allTracks,
   title = "FEATURED WORK",
   className = "mt-30 md:mt-20 lg:mt-70",
+  showTransition = true,
 }: FeaturedWorkProps = {}) {
   const sectionRef = useRef<HTMLElement>(null);
   const scrollerRef = useRef<HTMLDivElement>(null);
   const dragRef = useRef({ x: 0, y: 0, dragged: false });
+  const router = useRouter();
 
   const onPointerDown = (e: React.PointerEvent) => {
     dragRef.current = { x: e.clientX, y: e.clientY, dragged: false };
@@ -34,10 +42,15 @@ export default function FeaturedWork({
       dragRef.current.dragged = true;
     }
   };
-  const onClick = (e: React.MouseEvent) => {
+  const onClick = (e: React.MouseEvent, href: string) => {
     if (dragRef.current.dragged) {
       e.preventDefault();
+      return;
     }
+    if (!showTransition) return;
+    e.preventDefault();
+    window.dispatchEvent(new Event(TRANSITION_EVENT));
+    setTimeout(() => router.push(href), TRANSITION_FADE_IN_MS);
   };
 
   const scrollByCard = (dir: 1 | -1) => {
@@ -119,7 +132,7 @@ export default function FeaturedWork({
             data-card
             onPointerDown={onPointerDown}
             onPointerMove={onPointerMove}
-            onClick={onClick}
+            onClick={(e) => onClick(e, `/work/${track.slug}`)}
             className="snap-start shrink-0 w-[75vw] sm:w-[60vw] md:w-[40vw] lg:w-[28vw] xl:w-[22vw] group"
           >
             <div className="relative aspect-square overflow-hidden bg-zinc-900">

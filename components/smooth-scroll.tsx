@@ -1,6 +1,7 @@
 "use client";
 
-import { useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
@@ -12,6 +13,9 @@ export default function SmoothScroll({
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
+  const prevPathnameRef = useRef(pathname);
+
   useLayoutEffect(() => {
     const smoother = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
@@ -26,6 +30,23 @@ export default function SmoothScroll({
       smoother.kill();
     };
   }, []);
+
+  useEffect(() => {
+    const prev = prevPathnameRef.current;
+    const isWorkToWork =
+      prev !== pathname &&
+      prev.startsWith("/work/") &&
+      pathname.startsWith("/work/");
+
+    const smoother = ScrollSmoother.get();
+    if (smoother) {
+      smoother.scrollTo(0, isWorkToWork);
+    } else {
+      window.scrollTo(0, 0);
+    }
+    ScrollTrigger.refresh();
+    prevPathnameRef.current = pathname;
+  }, [pathname]);
 
   return (
     <div id="smooth-wrapper">
