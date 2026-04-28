@@ -5,8 +5,9 @@ import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
 
 export default function SmoothScroll({
   children,
@@ -38,13 +39,23 @@ export default function SmoothScroll({
       prev.startsWith("/work/") &&
       pathname.startsWith("/work/");
 
-    const smoother = ScrollSmoother.get();
-    if (smoother) {
-      smoother.scrollTo(0, isWorkToWork);
+    if (isWorkToWork) {
+      gsap.to(window, {
+        scrollTo: { y: 0, autoKill: false },
+        duration: 1.4,
+        ease: "power2.inOut",
+        onComplete: () => ScrollTrigger.refresh(),
+      });
     } else {
-      window.scrollTo(0, 0);
+      const smoother = ScrollSmoother.get();
+      if (smoother) {
+        smoother.scrollTo(0, false);
+      } else {
+        window.scrollTo(0, 0);
+      }
+      ScrollTrigger.refresh();
     }
-    ScrollTrigger.refresh();
+
     prevPathnameRef.current = pathname;
   }, [pathname]);
 

@@ -70,9 +70,8 @@ export default async function TrackPage({
                   <p
                     style={{
                       fontFamily: "var(--font-pp-neue-york)",
-                      fontWeight: 300,
-                      fontSize: "11px",
-                      letterSpacing: "0.2em",
+                      fontWeight: 500,
+                      fontSize: "15px",
                       textTransform: "uppercase",
                       color: "#999",
                       marginBottom: "0.4rem",
@@ -95,9 +94,8 @@ export default async function TrackPage({
                   <p
                     style={{
                       fontFamily: "var(--font-pp-neue-york)",
-                      fontWeight: 300,
-                      fontSize: "11px",
-                      letterSpacing: "0.2em",
+                      fontWeight: 500,
+                      fontSize: "15px",
                       textTransform: "uppercase",
                       color: "#999",
                       marginBottom: "0.4rem",
@@ -120,9 +118,8 @@ export default async function TrackPage({
                   <p
                     style={{
                       fontFamily: "var(--font-pp-neue-york)",
-                      fontWeight: 300,
-                      fontSize: "11px",
-                      letterSpacing: "0.2em",
+                      fontWeight: 500,
+                      fontSize: "15px",
                       textTransform: "uppercase",
                       color: "#999",
                       marginBottom: "0.4rem",
