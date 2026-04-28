@@ -1,5 +1,6 @@
 import Hero from "@/components/hero";
 import Opener from "@/components/opener";
+import AboutMe from "@/components/about-me";
 import Biograpghy from "@/components/biography";
 import FeaturedWork from "@/components/featured-work";
 import Background from "@/components/backround";
@@ -11,6 +12,7 @@ export default function Home() {
     <>
       <Hero />
       <Opener />
+      <AboutMe />
       <Biograpghy />
       <FeaturedWork />
       <Background />

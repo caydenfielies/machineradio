@@ -18,9 +18,9 @@ export default function Opener() {
           </div>
 
           <ParallaxImage
-            src="/Images/horsePoster.png"
+            src="/Images/tawshif-khan-EobK8cZi1Pw-unsplash.jpg"
             alt="Horse."
-            className="w-50 md:w-48 lg:w-64 aspect-[200/250]"
+            className="w-50 md:w-48 lg:w-80 aspect-[200/250]"
           />
 
           <div className="last-text flex items-end flex-1">

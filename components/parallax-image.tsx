@@ -39,6 +39,7 @@ export default function ParallaxImage({
           start: "top bottom",
           end: "bottom top",
           scrub: 1,
+          invalidateOnRefresh: true,
         },
       },
     );
