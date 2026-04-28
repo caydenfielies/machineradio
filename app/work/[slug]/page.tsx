@@ -41,11 +41,11 @@ export default async function TrackPage({
               <h1
                 className="break-words"
                 style={{
-                  fontFamily: "var(--font-editorial-new)",
+                  fontFamily: "var(--font-pp-neue-york)",
                   fontSize: "clamp(36px, 6vw, 80px)",
                   lineHeight: 0.9,
                   letterSpacing: "-0.02em",
-                  fontWeight: 200,
+                  fontWeight: 500,
                 }}
               >
                 {track.song}

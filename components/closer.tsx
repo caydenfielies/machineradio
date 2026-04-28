@@ -4,7 +4,7 @@ export default function Closer() {
       <div className="closer-container flex items-center justify-center h-auto md:h-screen">
         <h1
           className="text-2xl md:text-4xl lg:text-5xl px-4 md:px-8 lg:px-12.5 h-auto md:h-[50vh] mt-30 md:mt-20 text-center"
-          style={{ fontFamily: "var(--font-editorial-new)" }}
+          style={{ fontFamily: "var(--font-pp-neue-york)", fontWeight: "300" }}
         >
           My Message to the Youth:
           <br />

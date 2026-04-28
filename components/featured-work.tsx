@@ -150,7 +150,10 @@ export default function FeaturedWork({
             <div className="mt-4 flex flex-col gap-1">
               <h3
                 className="text-2xl md:text-3xl leading-tight"
-                style={{ fontFamily: "var(--font-editorial-new)" }}
+                style={{
+                  fontFamily: "var(--font-pp-neue-york)",
+                  fontWeight: "500",
+                }}
               >
                 {track.song}
               </h3>

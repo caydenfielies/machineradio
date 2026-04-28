@@ -3,7 +3,7 @@ export default function Goal() {
     <>
       <h1
         className="text-2xl md:text-4xl lg:text-6xl px-4 md:px-8 lg:px-12.5 h-auto md:h-[50vh] mt-30 md:mt-20"
-        style={{ fontFamily: "var(--font-editorial-new)" }}
+        style={{ fontFamily: "var(--font-pp-neue-york)", fontWeight: "300" }}
       >
         <span
           className="text-2xl md:text-xl lg:text-3xl mr-4 md:mr-10 lg:mr-20 block md:inline"
