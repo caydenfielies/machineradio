@@ -95,7 +95,7 @@ export default function Hero() {
     >
       <div
         className="side-texts text-2xl lg:text-3xl xl:text-4xl flex justify-between w-full px-4 md:px-6 lg:px-8 xl:px-12.5 absolute top-6 md:top-auto"
-        style={{ fontFamily: "var(--font-editorial-new)" }}
+        style={{ fontFamily: "var(--font-pp-neue-york)", fontWeight: "300" }}
       >
         <p ref={estRef}>Est.</p>
         <p ref={yearRef}>2019</p>
