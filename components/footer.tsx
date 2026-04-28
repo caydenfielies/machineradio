@@ -128,13 +128,17 @@ export default function Footer() {
         {/* Text content */}
         <div className="flex flex-col justify-center md:w-1/2 px-5 md:px-12.5 pt-20 md:py-0 gap-10 md:gap-14">
           <h2
-            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05]"
+            className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.05]"
             style={{ fontFamily: "var(--font-ft-calhern)", fontWeight: 200 }}
           >
             <span ref={setWordRef(0)}>Got something on your mind</span>
             <span
               ref={setWordRef(1)}
-              className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
+              className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl"
+              style={{
+                fontFamily: "var(--font-pp-neue-york)",
+                fontWeight: "300",
+              }}
             >
               ?
             </span>{" "}

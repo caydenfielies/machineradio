@@ -4,7 +4,6 @@ import Biograpghy from "@/components/biography";
 import FeaturedWork from "@/components/featured-work";
 import Background from "@/components/backround";
 import Goal from "@/components/goal";
-import Closer from "@/components/closer";
 import Footer from "@/components/footer";
 
 export default function Home() {
@@ -16,7 +15,6 @@ export default function Home() {
       <FeaturedWork />
       <Background />
       <Goal />
-      <Closer />
       <Footer />
     </>
   );
