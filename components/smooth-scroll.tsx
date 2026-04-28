@@ -40,9 +40,10 @@ export default function SmoothScroll({
       pathname.startsWith("/work/");
 
     if (isWorkToWork) {
+      const isMobile = window.matchMedia("(max-width: 768px)").matches;
       gsap.to(window, {
         scrollTo: { y: 0, autoKill: false },
-        duration: 1.4,
+        duration: isMobile ? 0.7 : 1.4,
         ease: "power2.inOut",
         onComplete: () => ScrollTrigger.refresh(),
       });
