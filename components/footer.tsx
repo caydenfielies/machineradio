@@ -82,7 +82,7 @@ export default function Footer() {
   return (
     <footer
       ref={sectionRef}
-      className="footer-container relative flex flex-col h-auto md:h-screen w-screen bg-black text-white mt-10 z-1000 overflow-hidden"
+      className="footer-container relative flex flex-col h-screen w-screen bg-black text-white mt-10 z-1000 overflow-hidden"
     >
       {/* Main content */}
       <div className="flex-1 flex flex-col-reverse md:flex-row md:items-stretch">
